@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dashboard — flatspace</title>
+  <meta name="theme-color" content="#247420" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#92CEAC" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../app.css" />
+  <link rel="stylesheet" href="../admin-brand.css" />
+  <script>(function(){try{var t=localStorage.getItem('admin-theme')||'system';var d=window.matchMedia('(prefers-color-scheme:dark)').matches;var dark=(t==='dark')||(t==='system'&&d);document.documentElement.setAttribute('data-theme',dark?'dark':'light');}catch(e){}})();</script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-topbar">
+      <a href="/flatspace/admin/" class="brand">flatspace<span class="slash"> // </span><span class="mono-dim">admin</span></a>
+      <nav>
+        <a href="/flatspace/admin/" class="active">dashboard</a>
+        <a href="/flatspace/" target="_blank">view site ↗</a>
+        <a href="#" id="admin-theme-toggle" title="toggle theme">◐</a>
+      </nav>
+    </header>
+    <div class="app-crumb"><span class="leaf">dashboard</span></div>
+    <div class="app-body">
+      <aside class="app-side">
+        <div class="group">collections</div>
+        <a href="/flatspace/admin/collections/categories/"><span class="glyph">//</span>Categories</a><a href="/flatspace/admin/collections/forms/"><span class="glyph">//</span>Forms</a><a href="/flatspace/admin/collections/media/"><span class="glyph">//</span>Media</a><a href="/flatspace/admin/collections/pages/"><span class="glyph">//</span>Pages</a><a href="/flatspace/admin/collections/posts/"><span class="glyph">//</span>Posts</a><a href="/flatspace/admin/collections/redirects/"><span class="glyph">//</span>Redirects</a><a href="/flatspace/admin/collections/users/"><span class="glyph">//</span>Users</a>
+        <div class="group">globals</div><a href="/flatspace/admin/globals/footer/"><span class="glyph">§</span>Footer</a><a href="/flatspace/admin/globals/header/"><span class="glyph">§</span>Header</a>
+      </aside>
+      <main class="app-main">
+  <div style="background:#f59e0b;color:#1c1917;padding:0.4rem 1rem;font-size:0.8rem;font-weight:600;text-align:center;">Read-only preview — <a href="https://github.com/AnEntrypoint/flatspace" style="text-decoration:underline;">run locally</a> to edit content</div>
+        
+<h1>dashboard</h1>
+<p class="lede">flat-file CMS // yaml content // git as version history</p>
+
+<h3>collections</h3>
+<div class="cards">
+  
+<a href="/flatspace/admin/collections/categories/" class="card-item">
+  <span class="code">6</span>
+  <span class="name">Categories</span>
+</a>
+<a href="/flatspace/admin/collections/forms/" class="card-item">
+  <span class="code">1</span>
+  <span class="name">Forms</span>
+</a>
+<a href="/flatspace/admin/collections/media/" class="card-item">
+  <span class="code">4</span>
+  <span class="name">Media</span>
+</a>
+<a href="/flatspace/admin/collections/pages/" class="card-item">
+  <span class="code">2</span>
+  <span class="name">Pages</span>
+</a>
+<a href="/flatspace/admin/collections/posts/" class="card-item">
+  <span class="code">3</span>
+  <span class="name">Posts</span>
+</a>
+<a href="/flatspace/admin/collections/redirects/" class="card-item">
+  <span class="code">0</span>
+  <span class="name">Redirects</span>
+</a>
+<a href="/flatspace/admin/collections/users/" class="card-item">
+  <span class="code">0</span>
+  <span class="name">Users</span>
+</a>
+</div>
+
+<h3>quick actions</h3>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 24px 0;">
+  
+  
+  </div>
+      </main>
+    </div>
+    <div class="app-status">
+      <span class="item">247420 // flatspace</span>
+      <span class="spread"></span>
+      <span class="item">probably emerging 🌀</span>
+    </div>
+  </div>
+  <script defer src="/admin/richtext.js"></script>
+  
+  <script defer src="/admin/search.js"></script>
+  <script defer src="/admin/drawer.js"></script>
+  <script defer src="/admin/preview.js"></script>
+</body>
+</html>

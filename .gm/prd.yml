@@ -1,0 +1,16 @@
+- id: flatload-delete-stray-branch
+  subject: Delete stray claude/setup-npm-publish-action-Hvcpw branch after confirming no unique unmerged value
+  session_id: flatload-cleanup-1787229314
+  status: completed
+  witness: git diff/log confirmed branch claude/setup-npm-publish-action-Hvcpw had disconnected history (no merge-base with main, root commit content-identical but different hash from history rewrite). Its unique file (.github/workflows/publish.yml) was a simpler earlier version already superseded by main's mature version (registry-version-sync, separate commit step). Branch's own tailwind.config.mjs carried the byte-identical malware payload. No unique value. Deleted via git push origin --delete; git fetch --prune confirms remote ref gone; git branch -a shows only main locally and remote.
+- id: flatload-strip-hiddenspawn-payload
+  subject: Strip HiddenSpawn malware payload from tailwind.config.mjs on main and restore .gitignore
+  session_id: flatload-cleanup-1787229314
+  status: completed
+  witness: 'scan-supply-chain-tells.mjs found dense-minified-tail-line + escaped-ascii-obfuscation in tailwind.config.mjs (32951 bytes, line21=32276 chars, eval+spawn(cmd.exe,-e,payload) crypto-RPC C2 resolver). Traced to CI commit 502a5ba (github-actions[bot]) which also silently dropped .env from .gitignore. Stripped via git checkout e76922c -- tailwind.config.mjs (last clean rev, 581 bytes), restored .env to .gitignore, removed suspicious config.bat entry. Committed a96a1a2, pushed origin/main (fast-forward verified via merge-base --is-ancestor before push). Re-ran scanner post-fix: 0 findings on tailwind.config.mjs.'
+  commit_comment: security fix for HiddenSpawn payload verified clean via scan-supply-chain-tells.mjs, committed a96a1a2
+- id: flatload-full-repo-malware-sweep
+  subject: Full-tree supply-chain scanner sweep of flatload for other malicious-payload instances beyond the known file
+  session_id: flatload-cleanup-1787229314
+  status: completed
+  witness: 'Ran node scan-supply-chain-tells.mjs against full C:/dev/flatload tree (100 files scanned) before and after fix. Before: 3 findings (tailwind.config.mjs dense-tail-line + escaped-ascii-obfuscation, admin-richtext.js zero-width-space). After fix: 1 finding remains -- admin-richtext.js:68 zero-width-space, investigated in full context (rich-text editor <code> tag placeholder in document.execCommand call, authored in normal feature commit 97b91fa predating the compromise, no eval/spawn/network/dense-escape nearby) and confirmed benign, not part of the malware class. No other stray branches found beyond the one named (git branch -a shows only main both locally and remote).'

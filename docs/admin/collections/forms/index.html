@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms — flatspace</title>
+  <meta name="theme-color" content="#247420" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#92CEAC" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../../app.css" />
+  <link rel="stylesheet" href="../../../admin-brand.css" />
+  <script>(function(){try{var t=localStorage.getItem('admin-theme')||'system';var d=window.matchMedia('(prefers-color-scheme:dark)').matches;var dark=(t==='dark')||(t==='system'&&d);document.documentElement.setAttribute('data-theme',dark?'dark':'light');}catch(e){}})();</script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-topbar">
+      <a href="/flatspace/admin/" class="brand">flatspace<span class="slash"> // </span><span class="mono-dim">admin</span></a>
+      <nav>
+        <a href="/flatspace/admin/">dashboard</a>
+        <a href="/flatspace/" target="_blank">view site ↗</a>
+        <a href="#" id="admin-theme-toggle" title="toggle theme">◐</a>
+      </nav>
+    </header>
+    <div class="app-crumb"><a href="/flatspace/admin/">dashboard</a> <span class="sep">/</span> <span class="leaf">forms</span></div>
+    <div class="app-body">
+      <aside class="app-side">
+        <div class="group">collections</div>
+        <a href="/flatspace/admin/collections/categories/"><span class="glyph">//</span>Categories</a><a href="/flatspace/admin/collections/forms/" class="active"><span class="glyph">//</span>Forms</a><a href="/flatspace/admin/collections/media/"><span class="glyph">//</span>Media</a><a href="/flatspace/admin/collections/pages/"><span class="glyph">//</span>Pages</a><a href="/flatspace/admin/collections/posts/"><span class="glyph">//</span>Posts</a><a href="/flatspace/admin/collections/redirects/"><span class="glyph">//</span>Redirects</a><a href="/flatspace/admin/collections/users/"><span class="glyph">//</span>Users</a>
+        <div class="group">globals</div><a href="/flatspace/admin/globals/footer/"><span class="glyph">§</span>Footer</a><a href="/flatspace/admin/globals/header/"><span class="glyph">§</span>Header</a>
+      </aside>
+      <main class="app-main">
+  <div style="background:#f59e0b;color:#1c1917;padding:0.4rem 1rem;font-size:0.8rem;font-weight:600;text-align:center;">Read-only preview — <a href="https://github.com/AnEntrypoint/flatspace" style="text-decoration:underline;">run locally</a> to edit content</div>
+        
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+  <div>
+    <h1>forms</h1>
+    <p class="t-meta">1 record</p>
+  </div>
+  
+</div>
+
+<form method="get" style="display:flex;gap:8px;max-width:480px;margin:8px 0 16px 0;">
+  <input name="search" value="" placeholder="search…" class="input" style="flex:1" />
+  <button type="submit" class="btn">search</button>
+</form>
+
+<div id="bulk-bar" style="display:none;align-items:center;gap:12px;padding:10px 14px;background:var(--panel-2);border-radius:8px;margin-bottom:12px">
+  <span class="t-meta"><span id="bulk-count">0</span> selected</span>
+  <button type="button" class="btn" data-bulk-delete data-collection="forms" style="color:var(--warn)">delete selected</button>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <span>forms</span>
+    <span>1 of 1</span>
+  </div>
+  <div class="panel-body">
+    <table class="kv" style="max-width:none;width:100%;margin:0;border-radius:0">
+      <thead style="background:var(--panel-2)"><tr><th style="width:32px"><input type="checkbox" id="select-all" onchange="document.querySelectorAll('.row-check').forEach(c=>{c.checked=this.checked});document.getElementById('bulk-bar').style.display=this.checked?'flex':'none'" /></th><th><a href="?sort=title">Title</a></th><th><a href="?sort=updatedAt">Updated At ↓</a></th></tr></thead>
+      <tbody><tr><td><input type="checkbox" class="row-check" value="contact-form" onchange="var c=document.querySelectorAll('.row-check:checked').length;document.getElementById('bulk-bar').style.display=c?'flex':'none';document.getElementById('bulk-count').textContent=c" /></td><td></td><td>1/1/2024</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+      </main>
+    </div>
+    <div class="app-status">
+      <span class="item">247420 // flatspace</span>
+      <span class="spread"></span>
+      <span class="item">probably emerging 🌀</span>
+    </div>
+  </div>
+  <script defer src="/admin/richtext.js"></script>
+  
+  <script defer src="/admin/search.js"></script>
+  <script defer src="/admin/drawer.js"></script>
+  <script defer src="/admin/preview.js"></script>
+</body>
+</html>

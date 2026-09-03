@@ -1,0 +1,37 @@
+{
+  "name": "flatspace",
+  "version": "1.0.23",
+  "description": "Flat-file CMS + static site builder — YAML content, Node or Bun",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "dev": "bun run --hot src/server.js",
+    "start": "bun run src/server.js",
+    "build:css": "bun x @tailwindcss/cli -i src/styles/app.css -o public/app.css --minify",
+    "build:brand": "bun run src/styles/build-brand.mjs",
+    "build:client": "bun build src/client.js --outfile public/client.js --target browser --minify",
+    "build": "bun run build:css && bun run build:brand && bun run build:client && bun run src/build.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1",
+    "rippleui": "^1.12.1",
+    "webjsx": "latest",
+    "xstate": "^5.18.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.18",
+    "@tailwindcss/cli": "^4.2.2"
+  },
+  "bin": {
+    "flatspace": "./bin/flatspace.js"
+  },
+  "files": [
+    "index.js",
+    "src/",
+    "bin/",
+    "tailwind.config.mjs"
+  ]
+}
